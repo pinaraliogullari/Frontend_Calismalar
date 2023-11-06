@@ -8,6 +8,8 @@
 
 body {
     font-size: 13px;
+    font-family: Roboto;
+
 }
 
 .container {
@@ -26,13 +28,19 @@ ul {
     list-style-type: none;
 }
 
-.header {
+/* .header {
     width: 100%;
     user-select: none;
+    height: 150px;
+} */
+
+.header-adv {
+    width: 100%;
+    height: 65px;
 }
 
 .advertisement {
-    height: 65px;
+    height: 100%;
     background-color: orangered;
     text-align: center;
 }
@@ -42,8 +50,8 @@ ul {
 }
 
 .header-main {
-    height: 100%;
-    /* background-color: red; */
+    height: 100px;
+
 
 }
 
@@ -83,20 +91,22 @@ ul {
 .header-bottom {
     width: 100%;
     height: 64px;
+    display: flex;
+    margin-top: 30px;
 }
 
 .logo-image {
     width: 210px;
     height: 36px;
     /* margin-left: 150px; */
-    margin-top: 45px;
+
 }
 
 .search {
 
     padding: 10px 40px 10px 15px;
     position: relative;
-    margin-top: 30px;
+    margin-top: -15px;
     margin-left: 30px;
 
 }
@@ -120,7 +130,7 @@ ul {
     font-size: 20px;
     position: absolute;
     left: 580px;
-    top: 90%;
+    top: 40%;
     transform: translateY(-50%);
     cursor: pointer;
 }
@@ -128,21 +138,23 @@ ul {
 .account {
     width: 300px;
     height: 40px;
-    margin-top: 50px;
+    margin-top: 5px;
+
 
 }
 
 .account ul {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
+
 }
 
 
 .account ul li a {
     color: black;
-    font-weight: 500;
-    font-size: 14px;
-    padding-left: 5px;
+    font-weight: 400;
+    font-size: 13px;
+    padding-left: 6px;
 }
 
 .account ul li i {
@@ -158,6 +170,280 @@ ul {
 
 .account li i:hover {}
 
-.header-bottom {
+.navbar {
+    width: 100%;
+    height: 36px;
+    /* background-color: #999; */
+
+}
+
+.navbar-items {
     display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px 0;
+
+}
+
+.navbar-item a {
+    padding: 10px;
+    color: black;
+    font-weight: 500;
+    transition-duration: 0.3s;
+}
+
+.navbar-item button {
+    background-color: red;
+    width: 40px;
+    height: 16px;
+    border-radius: 32px;
+    border: none;
+    color: white;
+    margin-left: 3px;
+    cursor: pointer;
+
+}
+
+.navbar-item a:hover {
+    color: orangered;
+    border-bottom: 3px solid orangered;
+}
+
+.entry-items {
+    height: 55px;
+    width: 100%;
+}
+
+.images {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 40px;
+    object-fit: cover;
+    /* overflow: visible; */
+}
+
+.image span {
+    font-weight: 500;
+    text-align: center;
+    margin-top: 10px;
+    color: #333;
+    font-size: 14px;
+    display: block;
+    transition: all ease 0.2s;
+    line-height: 14px;
+    height: 42px;
+
+}
+
+
+.image span:hover {
+    color: orangered;
+}
+
+.image {
+    text-align: center;
+
+    /* flex: 0 0 100%; */
+    /* Resimlerin sıra içinde aynı genişlikte olmasını sağlar */
+}
+
+/* button#sagaGit {
+    cursor: pointer;
+}
+
+button#sagaGit:hover+.images {
+    animation: sagaKaydir 1s linear infinite;
+}
+
+@keyframes sagaKaydir {
+    0% {
+        transform: translateX(-100%);
+    }
+} */
+.section1 {
+    margin-top: 100px;
+    width: 100%;
+    height: 77px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card {
+    text-align: center;
+    width: 386.67px;
+    height: 56.9829px;
+    border: none;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 80px;
+}
+
+.card1 {
+    background-color: #F2FFE9;
+}
+
+.card1 a {
+    color: green;
+}
+
+.card2 {
+    background-color: #F8F0E5
+}
+
+.card2 a {
+    color: orangered;
+}
+
+.card3 {
+    background-color: rgb(244, 224, 228);
+}
+
+.card3 a {
+    color: rgb(194, 13, 44);
+}
+
+.section2 {
+    width: 100%;
+    margin-bottom: 40px;
+
+}
+
+.section2-group1 {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.section2-group2 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.section2 a img {
+    width: 383px;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+    display: block;
+
+}
+
+
+.info {
+    width: 383px;
+    height: 38px;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+    transition-duration: .3s;
+}
+
+.section2 .info {
+    background-color: black;
+
+}
+
+.text {
+    color: white;
+    font-weight: 500;
+
+}
+
+.hover-text {
+    color: black;
+    font-weight: 500;
+    padding-right: 20px;
+}
+
+
+
+.section2 a:hover {
+    .hover-text {
+        color: white;
+    }
+
+    .info {
+        background-color: orangered;
+    }
+}
+
+.section3 {
+    width: 100%;
+    height: 452px;
+    background-color: #fffaf6;
+
+}
+
+.title {
+    width: 100%;
+    height: 17px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.title h2 {
+    font-weight: 400;
+    font-size: 20px;
+    padding-top: 50px;
+    padding-left: 30px;
+}
+
+.title a {
+    text-decoration: underline;
+    color: black;
+    padding-top: 50px;
+    padding-right: 30px;
+}
+
+.card-area {
+    width: 250px;
+    height: 370px;
+    margin-left: 30px;
+    margin-top: 50px;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.card-img-sec {
+    text-align: center;
+    padding: 15px 0;
+}
+
+.card-img-sec img {
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+}
+
+.card-title-sec {
+    color: black;
+    padding-bottom: 40px;
+    padding-left: 10px;
+}
+
+.brand {
+    font-weight: bold;
+}
+
+.card-price-sec {
+    color: orangered;
+    font-weight: 600;
+    font-size: 15px;
+    padding-left: 10px;
+}
+
+.card-tag-sec {
+    width: 150px;
+    /* background-color: #fffaf6; */
+    padding-top: 10px;
+    padding-left: 10px;
 }
