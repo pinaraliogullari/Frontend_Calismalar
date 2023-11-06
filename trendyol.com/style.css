@@ -93,11 +93,38 @@ ul {
     height: 64px;
     display: flex;
     margin-top: 30px;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+
+}
+
+.up {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+
+}
+
+.up button {
+    background-color: whitesmoke;
+    width: 90px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.up button:hover {
+    background-color: orangered;
+    color: white;
+
 }
 
 .logo-image {
     width: 210px;
     height: 36px;
+
     /* margin-left: 150px; */
 
 }
@@ -305,11 +332,13 @@ button#sagaGit:hover+.images {
     color: rgb(194, 13, 44);
 }
 
-.section2 {
+.section2,
+.section5 {
     width: 100%;
     margin-bottom: 40px;
 
 }
+
 
 .section2-group1 {
     display: flex;
@@ -326,7 +355,7 @@ button#sagaGit:hover+.images {
     width: 383px;
     border-top-right-radius: 3px;
     border-top-left-radius: 3px;
-    display: block;
+
 
 }
 
@@ -372,10 +401,49 @@ button#sagaGit:hover+.images {
     }
 }
 
-.section3 {
+/*******************************************************************************************************************************/
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+/* .row {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+} */
+
+.section5 a img {
+    width: 383px;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+
+
+}
+
+.section5 a:hover {
+    .hover-text {
+        color: white;
+    }
+
+    .info {
+        background-color: orangered;
+    }
+}
+
+.section5 .info {
+    background-color: black;
+
+}
+
+.section3,
+.section4 {
     width: 100%;
-    height: 452px;
-    background-color: #fffaf6;
+    height: 480px;
+    background-color: red;
+    margin-bottom: 40px;
 
 }
 
@@ -386,6 +454,9 @@ button#sagaGit:hover+.images {
     justify-content: space-between;
     align-items: center;
 
+
+
+
 }
 
 .title h2 {
@@ -393,6 +464,8 @@ button#sagaGit:hover+.images {
     font-size: 20px;
     padding-top: 50px;
     padding-left: 30px;
+
+
 }
 
 .title a {
@@ -400,35 +473,111 @@ button#sagaGit:hover+.images {
     color: black;
     padding-top: 50px;
     padding-right: 30px;
+
+}
+
+.card-areas {
+    display: flex;
+    justify-content: space-around;
+
 }
 
 .card-area {
-    width: 250px;
-    height: 370px;
+    width: 280px;
+    height: auto;
     margin-left: 30px;
     margin-top: 50px;
     background-color: white;
     border: none;
     border-radius: 5px;
-    display: flex;
-    justify-content: space-around;
+
+
+
 }
+
 
 .card-img-sec {
     text-align: center;
     padding: 15px 0;
+    position: relative;
 }
 
 .card-img-sec img {
     border-top-right-radius: 3px;
     border-top-left-radius: 3px;
+
+}
+
+.button-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.button-container img {
+    z-index: 1;
+    margin-right: 10px;
+    position: absolute;
+    top: 110px;
+    left: -5px;
+}
+
+.btn1 {
+    width: 60px;
+    height: 60px;
+    border: none;
+    font-weight: 600;
+    border-radius: 50%;
+    color: white;
+    background-color: orange;
+    position: absolute;
+    z-index: 1;
+    margin-right: 10px;
+    top: 160px;
+    left: -5px;
+
+}
+
+.btn2 {
+    margin-right: 10px;
+    width: 80px;
+    height: 30px;
+    border: none;
+    font-weight: 600;
+    font-size: 10px;
+    border-radius: 5px;
+    color: white;
+    background-color: rgb(75, 73, 73);
+    position: absolute;
+    z-index: 1;
+    margin-right: 10px;
+    top: 10px;
+    left: 5px;
+}
+
+.btn3 {
+    width: 80px;
+    height: 30px;
+    border: none;
+    font-weight: 600;
+    font-size: 10px;
+    border-radius: 5px;
+    color: white;
+    background-color: green;
+    z-index: 1;
+    margin-right: 10px;
+    position: absolute;
+    top: 40px;
+    left: 5px;
 }
 
 .card-title-sec {
     color: black;
-    padding-bottom: 40px;
+    padding-bottom: 10px;
     padding-left: 10px;
+
 }
+
 
 .brand {
     font-weight: bold;
@@ -439,11 +588,12 @@ button#sagaGit:hover+.images {
     font-weight: 600;
     font-size: 15px;
     padding-left: 10px;
+
 }
 
 .card-tag-sec {
     width: 150px;
     /* background-color: #fffaf6; */
-    padding-top: 10px;
+    padding-top: 30px;
     padding-left: 10px;
 }
