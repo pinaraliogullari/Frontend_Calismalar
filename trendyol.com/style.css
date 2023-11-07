@@ -15,7 +15,7 @@ body {
 .container {
 
     width: 80vw;
-    height: 100%;
+    height: auto;
     margin: 0 auto;
 
 }
@@ -443,8 +443,8 @@ button#sagaGit:hover+.images {
 .section3,
 .section4 {
     width: 100%;
-    height: 480px;
-    background-color: red;
+    height: 450px;
+    /* background-color: red; */
     margin-bottom: 40px;
 
 }
@@ -474,29 +474,74 @@ button#sagaGit:hover+.images {
     text-decoration: underline;
     color: black;
     padding-top: 50px;
-    padding-right: 30px;
+    padding-right: 40px;
 
 }
 
-.card-areas {
+.bestseller-area {
+    margin-top: 10px;
+    width: 928px;
+}
+
+.bsrow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* .bs-title h3 {
+
+    font-size: 22px;
+    width: 200px;
+    height: 10px;
+    font-weight: normal;
+    padding-bottom: 30px;
+
+} */
+
+.card-areas,
+.bestseller-area {
     display: flex;
     justify-content: space-around;
 
 }
 
-.card-area {
-    width: 280px;
-    height: auto;
-    margin-left: 30px;
-    margin-top: 50px;
-    background-color: white;
-    border: none;
-    border-radius: 5px;
 
+
+.card-area,
+.bscard {
+    width: 250px;
+    height: auto;
+    /* margin-left: 10px; */
+    margin-top: 50px;
+    /* background-color: black; */
+    border-radius: 5px;
+    padding-left: 20px;
+    border: 1px solid rgba(215, 213, 213, 0.5);
 
 
 }
 
+.pageend-button a {
+    display: block;
+    margin: 20px 0;
+    padding-top: 15px;
+    height: 50px;
+    width: 928px;
+    text-align: center;
+    border: 1px solid rgba(215, 213, 213, 0.5);
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 400;
+    color: black;
+    transition-duration: .3s;
+}
+
+.pageend-button a:hover {
+    border: 1px solid orangered;
+
+}
 
 .card-img-sec {
     text-align: center;
@@ -536,7 +581,7 @@ button#sagaGit:hover+.images {
     z-index: 1;
     margin-right: 10px;
     top: 160px;
-    left: -5px;
+    left: 5px;
 
 }
 
@@ -593,10 +638,12 @@ button#sagaGit:hover+.images {
 
 }
 
+
+
 .card-tag-sec {
     width: 150px;
     /* background-color: #fffaf6; */
-    padding-top: 30px;
+    padding-top: 10px;
     padding-left: 10px;
 }
 
@@ -631,12 +678,12 @@ button#sagaGit:hover+.images {
 
 .brands-pages {
     width: 100%;
-    height: auto;
+    height: 100%;
     margin-top: 30px;
     margin-left: 40px;
     margin-right: 40px;
     width: 100%;
-    height: auto;
+
 
 }
 
@@ -684,12 +731,15 @@ button#sagaGit:hover+.images {
     width: 100%;
     height: 400px;
     background-color: black;
+
 }
 
 .black-panel {
+
     margin-left: 80px;
     margin-top: 40px;
     display: flex;
+
 
 }
 
@@ -800,7 +850,12 @@ footer {
     display: block;
 } */
 /********************************************sepetim *************************************************************************/
-.left-side h3 {
+.bag-leftside {
+    width: 928px;
+}
+
+.bag-leftside h3 {
+
     font-size: 22px;
     font-weight: normal;
     padding-top: 20px;
