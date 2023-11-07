@@ -981,7 +981,6 @@ footer {
 }
 
 
-
 /* .warning-title {
     color: red;
     font-size: 12px;
@@ -990,3 +989,113 @@ footer {
 
 
 } */
+/******************************SEPETİ ONAYLA KUTUSU*********************************************/
+.sticky {
+    position: sticky;
+    top: 20px;
+    align-self: flex-start;
+}
+
+.summary {
+    width: 250px;
+    margin-left: 20px;
+}
+
+.confirm {
+    margin-bottom: 20px;
+}
+
+.confirm a {
+    width: 100%;
+    box-sizing: border-box;
+    height: 48px;
+}
+
+.btn-primary {
+    border-radius: 6px;
+    background-color: #f27a1a;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.confirm a span {
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+}
+
+.confirm a i {
+    font-size: 14px;
+    margin-left: 7px;
+}
+
+.summary-box {
+    width: 100%;
+    padding: 15px;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    background-color: white;
+    line-height: 24px;
+}
+
+.summary-box h1 {
+    font-size: 22px;
+    line-height: 28px;
+    color: #333;
+    margin-bottom: 16px;
+    font-weight: 400;
+}
+
+.summary-box ul {
+    list-style-type: none;
+}
+
+.summary-box li {
+    display: flex;
+    justify-content: space-between;
+    color: #333;
+    font-size: 14px;
+}
+
+.summary-box li strong {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333333;
+    max-width: 80px;
+}
+
+.summary-total-price {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 16px;
+    font-weight: 600;
+    color: #f27a1a;
+    width: 100%;
+    text-align: right;
+}
+
+.discount-box {
+    display: flex;
+    height: 40px;
+    border-radius: 8px;
+    border: solid 1px #e6e6e6;
+    background-color: #ffffff;
+    flex-direction: row;
+    justify-content: center;
+    margin: 10px 0 15px;
+    padding: 12px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+/****************************************************************************************************************/
