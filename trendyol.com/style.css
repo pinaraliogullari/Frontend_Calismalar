@@ -95,7 +95,10 @@ ul {
     display: flex;
     margin-top: 30px;
     /* position: fixed;
-    top: 0; */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1; */
 
 
 
@@ -729,16 +732,17 @@ button#sagaGit:hover+.images {
 
 .last-section {
     width: 100%;
-    height: 400px;
+    height: 600px;
     background-color: black;
 
 }
 
 .black-panel {
 
-    margin-left: 80px;
+
     margin-top: 40px;
     display: flex;
+    justify-content: space-evenly;
 
 
 }
@@ -746,7 +750,7 @@ button#sagaGit:hover+.images {
 .list {
 
     margin-left: 80px;
-    margin-right: 20px;
+    margin-right: 80px;
     padding-left: 30px;
     padding-top: 60px;
     width: 200;
@@ -782,8 +786,38 @@ button#sagaGit:hover+.images {
     display: flex;
     z-index: 1;
     position: absolute;
-    left: 180px;
+    left: 100px;
+}
 
+.app-image {
+    position: absolute;
+    left: 100px;
+}
+
+.socialmedia {
+    position: absolute;
+    left: 100px;
+}
+
+.barcode {
+    position: absolute;
+    left: 100px;
+}
+
+.trendyol {
+    position: relative;
+}
+
+.about-us {
+    position: relative;
+}
+
+.kampanyalar {
+    position: relative;
+}
+
+.help {
+    position: relative;
 }
 
 
@@ -991,10 +1025,15 @@ footer {
 } */
 /******************************SEPETİ ONAYLA KUTUSU*********************************************/
 .sticky {
-    position: sticky;
-    top: 20px;
+
+    position: -webkit-sticky;
+    top: 0;
+    left: 1100px;
     align-self: flex-start;
+
 }
+
+
 
 .summary {
     width: 250px;
