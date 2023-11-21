@@ -1,3 +1,4 @@
 #Front-end calismalar
-HTML ve CSS öğrenirken yaptığım başlangıç seviye çalışmaları içermektedir.
+
+HTML Css ve JavaScript  öğrenirken yaptığım başlangıç seviye çalışmaları içermektedir.
  
