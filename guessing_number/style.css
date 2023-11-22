@@ -1,0 +1,88 @@
+body {
+    background-color: rgb(231, 142, 142);
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.game-box {
+    background-color: white;
+    width: 50%;
+    position: absolute;
+    top: 30%;
+    left: 25%;
+    padding: 20px;
+    border: none;
+    border-radius: 8px;
+
+
+}
+
+#title {
+    font-family: 'Ubuntu Mono', monospace !important;
+    text-align: center;
+    border-bottom: 1px solid rgb(219, 217, 217);
+    padding-bottom: 10px;
+}
+
+.text-align {
+    text-align: right;
+
+}
+
+i {
+    font-size: 25px;
+}
+
+.red {
+    color: #df1111;
+
+}
+
+.grey {
+    color: gray;
+}
+
+
+#text {
+    color: tomato;
+}
+
+#number {
+    width: 100%;
+    border: 1px solid rgba(164, 163, 163, .6);
+    border-radius: 3px;
+}
+
+#guess-button {
+    width: 100%;
+    margin: 20px 0;
+}
+
+#again-button {
+    width: 100%;
+    margin: 20px 0;
+}
+
+.btn-hide {
+    display: none;
+}
+
+.btn-show {
+    display: inline-block;
+}
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 576px) {
+
+    .text-align {
+        text-align: center;
+    }
+
+}
