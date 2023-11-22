@@ -1,7 +1,14 @@
 body {
-    background-color: rgb(231, 142, 142);
+    height: 100vh;
+    /* background-color: rgb(223, 95, 41); */
     font-family: 'Roboto', sans-serif;
+    background: url(/image/numbers.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+
 
 
 .game-box {
@@ -11,7 +18,7 @@ body {
     top: 30%;
     left: 25%;
     padding: 20px;
-    border: none;
+    border: 1px solid rgba(215, 120, 85, .3);
     border-radius: 8px;
 
 
@@ -33,8 +40,8 @@ i {
     font-size: 25px;
 }
 
-.red {
-    color: #df1111;
+.orange {
+    color: rgb(204, 64, 22);
 
 }
 
@@ -44,7 +51,7 @@ i {
 
 
 #text {
-    color: tomato;
+    color: rgb(207, 101, 14);
 }
 
 #number {
@@ -56,11 +63,13 @@ i {
 #guess-button {
     width: 100%;
     margin: 20px 0;
+    color: black;
 }
 
 #again-button {
     width: 100%;
     margin: 20px 0;
+    color: black;
 }
 
 .btn-hide {

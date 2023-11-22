@@ -1,49 +1,58 @@
 let heart = 3;
 let random = 0;
-let guessButton = document.getElementById("guess-button");
-let againButton = document.getElementById("again-button");
-let icon = document.querySelector(".red");
 
 
-guessButton.addEventListener("click", function () {
+function Guess() {
     let number = document.getElementById("number").value;
     if (heart == 3) {
-        random = Math.floor(Math.random() * 10 + 1);
+        random = Math.floor(Math.random() * 10) + 1;
     }
+
     if (number == random) {
         document.getElementById("result").innerHTML = "Congratulations!"
-        document.getElementById("guess-button").innerHTML = "Play again!"
+        ShowButton("again-button");
+        HideButton("guess-button");
 
-    }else {
 
-        let heartIcon = document.querySelectorAll("#hearts > i")[heart - 1];
-        heartIcon.classList.remove("red");
-        heartIcon.classList.add("grey");
 
+    } else {
+        let element = document.querySelectorAll("#hearts > i")[heart - 1];
+        element.classList.remove("orange");
+        element.classList.add("grey");
         heart--;
 
         if (heart > 0) {
             document.getElementById("result").innerHTML = "Wrong answer:(";
+        } else {
+            ShowButton("again-button");
+            HideButton("guess-button");
 
-            guessButton.classList.remove("btn-show");
-            guessButton.classList.add("btn-hide");
-            againButton.classList.remove("btn-hide");
-            againButton.classList.add("btn-show");
+            document.getElementById("result").innerHTML = "Wrong answer:( Correct answer is  " + random;
         }
-        else {
-
-        }
-
-
-
-
     }
-})
 
-function Show
+};
+
+function Again() {
+    heart = 3;
+    for (let i = 0; i < 3; i++) {
+        let element = document.querySelectorAll("#hearts > i")[i];
+        element.classList.remove("grey");
+        element.classList.add("orange");
+    }
+
+    HideButton("again-button");
+    ShowButton("guess-button");
+    document.getElementById("result").innerHTML = "";
+}
 
 
+function ShowButton(id) {
+    document.getElementById(id).classList.add("btn-show");
+    document.getElementById(id).classList.remove("btn-hide");
+}
 
-
-
-
+function HideButton(id) {
+    document.getElementById(id).classList.remove("btn-show");
+    document.getElementById(id).classList.add("btn-hide");
+}
