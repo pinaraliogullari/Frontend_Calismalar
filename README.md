@@ -9,5 +9,7 @@ HTML Css ve JavaScript  öğrenirken yaptığım başlangıç seviye- basic  ça
 5)Bulb On-Off
 6)Digital Clock
 7)BMI Calculator
+8)IOS Calculator
+9)Modal App
 
  
