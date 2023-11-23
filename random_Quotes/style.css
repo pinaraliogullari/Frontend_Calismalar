@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: orange;
+}
+
+html {
+    font-size: 10px;
+}
+
+#content-box {
+    width: 50%;
+    height: auto;
+    /*içeriğe göre otomatik belirlenir.*/
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    transform: translate(0, 50%);
+}
+
+.content {
+    background-color: #fff;
+    height: auto;
+    border-radius: 1.5rem 0 1.5rem 0;
+    padding: 5rem;
+    color: black;
+    font-size: 1.5rem;
+    font-weight: bold;
+
+}
+
+.icons {
+    text-align: end;
+    margin-top: 1rem;
+}
