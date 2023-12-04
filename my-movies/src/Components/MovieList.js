@@ -1,9 +1,7 @@
 import React from 'react';
 
 const MovieList = (props) => {
-function handleClick(){
-    // console.log("Button Clicked");
-}
+
     return (
         <>
             <div className='row'>
