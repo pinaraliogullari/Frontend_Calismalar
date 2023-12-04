@@ -1,99 +1,111 @@
-import React, { useState } from "react";
+
+import React, { useState, useEffect } from "react";
 import SearchBar from './Components/SearchBar';
 import MovieList from './Components/MovieList';
-
-
+import axios from 'axios';
+import AddMovie from "./Components/AddMovie";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 const App = () => {
-  const [movies, setMovies] = useState([
-//JSON format
-    {
-      "id": 1,
-      "name": "The Matrix 3",
-      "rating": "8.1",
-      "overview": "Set in the 22nd century, The Matrix tells the story of a computer hacker who joins a group of underground insurgents fighting the vast and powerful computers who now rule the earth.",
-      "imageURL": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/dXNAPwY7VrqMAo51EKhhCJfaGb5.jpg"
+  const [movies, setMovies] = useState([]);
 
-    },
+  // Filmleri çekme işlemi
 
-    {
-      "id": 2,
-      "name": "Blitz 007",
-      "rating": "11",
-      "overview": "Set in the 22nd century, The Matrix tells the story of a computer hacker who joins a group of underground insurgents fighting the vast and powerful computers who now rule the earth.",
-      "imageURL": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/qCPMjT8Ld8tvs1zs7LY2jpKlRIK.jpg"
+  //axios ile:direkt json formatına çeviriyor.
+  useEffect(() => {
+    const fetchMovies = async () => {
+      try {
+        const response = await axios.get("http://localhost:3002/movies");
+        const data = response.data;
+        setMovies(data);
+      } catch (error) {
+        console.error("Filmler getirilirken hata oluştu:", error.response.data || error.message || error);
+      }
+    };
 
-    },
-    {
-      "id": 3,
-      "name": "Hostage",
-      "rating": "6.3",
-      "imageURL": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/4hne3v6jN4MlCnhSkxOW7YspJhr.jpg",
-      "overview": "Set in the 22nd century, The Matrix tells the story of a computer hacker who joins a group of underground insurgents fighting the vast and powerful computers who now rule the earth."
+    fetchMovies();
+  }, []);
 
-    },
-    {
-      "id": 4,
-      "name": "The Matrix Reloaded",
-      "rating": "6.9",
-      "imageURL": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/jBegA6V243J6HUnpcOILsRvBnGb.jpg",
-      "overview": "Set in the 22nd century, The Matrix tells the story of a computer hacker who joins a group of underground insurgents fighting the vast and powerful computers who now rule the earth."
-
-    },
-    {
-      "id": 5,
-      "name": "Saw 3D",
-      "rating": "7.5",
-      "overview": "Set in the 22nd century, The Matrix tells the story of a computer hacker who joins a group of underground insurgents fighting the vast and powerful computers who now rule the earth.",
-      "imageURL": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/qHCZ6LjtmqWDfXXN28TlIC9OppK.jpg"
-
-    },
-
-    {
-      "id": 6,
-      "name": "Hostage",
-      "rating": "6.3",
-      "imageURL": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/4hne3v6jN4MlCnhSkxOW7YspJhr.jpg",
-      "overview": "Set in the 22nd century, The Matrix tells the story of a computer hacker who joins a group of underground insurgents fighting the vast and powerful computers who now rule the earth."
-
+  // Film silme işlemi
+  const deleteMovie = async (id) => {
+    try {
+      await axios.delete(`http://localhost:3002/movies/${id}`);
+      const newMovieList = movies.filter(movie => movie.id !== id);
+      setMovies(newMovieList);
+    } catch (error) {
+      console.error("Film silinirken hata oluştu:", error.response.data || error.message || error);
     }
+  };
 
-  ])
-
-  // silinmeyen filmler için liste oluşturuyoruz.
- 
-    const deleteMovie = (id) => {
-      setMovies(movies.filter(movie => movie.id !== id));
-  }
-
-
-  //search
+  // Filmleri filtreleme işlemi
   const [filteredMovies, setFilteredMovies] = useState([]);
 
-  const searchMovie = (e) => {
+  // const searchMovie = (e) => {
+  //   const query = e.target.value.toLowerCase();
+  //   setFilteredMovies(movies.filter(movie =>
+  //     movie.name.toLowerCase().indexOf(query) !== -1)
+  //   );
+  // };
+  //axios ile
+  const searchMovie = async (e) => {
     const query = e.target.value.toLowerCase();
+    try {
+      const response = await axios.get("http://localhost:3002/movies");
+      const data = response.data;
+      const filteredData = data.filter(movie =>
+        movie.name.toLowerCase().indexOf(query) !== -1
+      );
+      setFilteredMovies(filteredData);
+    } catch (error) {
+      console.error("Filmler getirilirken hata oluştu:", error.response.data || error.message || error);
+    }
+  };
 
-     setFilteredMovies(movies.filter(movie =>
-      movie.name.toLowerCase().indexOf(query)!==-1) 
-    );
-
-  }
+  //film ekleme
+  const addMovie = async (movie) => {
+    try {
+      await axios.post(`http://localhost:3002/movies/`, movie)
+      setMovies([...movies, movie]);
+   return;
+    } catch (error) {
+      console.error("Film eklenirken hata oluştu:", error.response.data || error.message || error);
+    }
+  };
 
   return (
-    <>
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-12">
-            <SearchBar searchMovie={searchMovie} />
-          </div>
-        </div>
-        <MovieList
-          movies={filteredMovies.length > 0 ? filteredMovies : movies}
-          deleteMovie={deleteMovie}
-        />
-      </div>
-    </>
-  )
-}
 
-export default App;
+    <Router>
+
+      <Routes>
+        <Route path="/" element={
+          <React.Fragment>
+            <div className="container">
+              <div className="row">
+                <div className="col-lg-12">
+                  <SearchBar searchMovie={searchMovie} />
+                </div>
+              </div>
+              <MovieList
+                movies={filteredMovies.length > 0 ? filteredMovies : movies}
+                deleteMovie={deleteMovie}
+              />
+            </div>
+          </React.Fragment>
+        }>
+        </Route>
+        <Route path="add" element={
+        
+        <AddMovie 
+        onAddMovie={(movie)=>{AddMovie(movie)}}
+        />} />
+      </Routes>
+    </Router>
+
+  );
+
+      }
+  export default App;
+
+
+
+
